@@ -1,0 +1,31 @@
+doctype html
+html(lang="en")
+  head
+    title= title
+    link(rel='stylesheet', href='/css/style.css')
+  body
+    h1 Add New Event
+    form(action="/update-event", method="POST")
+      label(for="event_name") Event Name:
+      input(type="text", id="event_name", name="event_name", required)
+      
+      label(for="event_description") Description:
+      textarea(id="event_description", name="event_description", required)
+      
+      label(for="event_start_date") Start Date:
+      input(type="datetime-local", id="event_start_date", name="event_start_date", required)
+      
+      label(for="event_end_date") End Date:
+      input(type="datetime-local", id="event_end_date", name="event_end_date", required)
+      
+      label(for="event_record_type") Event Type:
+      select(id="event_record_type", name="event_record_type", required)
+        option(value="") Select type
+        option(value="Meeting") Meeting
+        option(value="Conference") Conference
+        option(value="Webinar") Webinar
+        option(value="Social") Social
+      
+      button(type="submit") Create Event
+    br
+    a(href="/") ← Back to All Events

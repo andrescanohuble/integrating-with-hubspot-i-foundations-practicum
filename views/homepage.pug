@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+  head
+    title= title
+    link(rel='stylesheet', href='/css/style.css')
+  body
+    h1 Event Management
+    a(href="/update-event") Add New Event
+    
+    table
+      thead
+        tr
+          th Event Name
+          th Description
+          th Start Date
+          th End Date
+          th Type
+      tbody
+        each event in events
+          tr
+            td= event.properties.event_name
+            td= event.properties.event_description
+            td= new Date(event.properties.event_start_date).toLocaleString()
+            td= new Date(event.properties.event_end_date).toLocaleString()
+            td= event.properties.event_record_type
